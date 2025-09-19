@@ -3,9 +3,6 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
-  Star, 
-  Users, 
-  Award,
   Quote,
   Play,
   Heart
@@ -39,23 +36,6 @@ export default function SocialProofSection() {
     }
   ];
 
-  const stats = [
-    {
-      number: "1,132",
-      label: "Smiles Transformed in Port St. Lucie",
-      icon: Users
-    },
-    {
-      number: "4.9⭐",
-      label: "Google Rating",
-      icon: Star
-    },
-    {
-      number: "15+",
-      label: "Years of Excellence",
-      icon: Award
-    }
-  ];
 
   return (
     <section id="testimonials" className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
@@ -70,22 +50,6 @@ export default function SocialProofSection() {
           </p>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-blue-600" />
-              </div>
-              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                {stat.number}
-              </div>
-              <p className="text-gray-600 font-medium">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
 
         {/* Testimonials */}
         <div className="grid md:grid-cols-3 gap-8">

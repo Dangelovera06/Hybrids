@@ -46,25 +46,6 @@ export default function HeroSection() {
               — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
             </p>
 
-            {/* Social Proof Quick Stats */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-8">
-              <div className="flex items-center space-x-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <span className="text-gray-700 font-medium">4.9 Rating</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-5 h-5 text-blue-600" />
-                <span className="text-gray-700 font-medium">1,000+ Patients</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-                <span className="text-gray-700 font-medium">Same-Day Results</span>
-              </div>
-            </div>
 
             {/* CTA Button */}
             <div className="space-y-4">
@@ -93,30 +74,6 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Floating Stats Cards */}
-            <div className="absolute -bottom-8 -left-8 bg-white rounded-lg shadow-lg p-4 border hidden sm:block">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">1,132</p>
-                  <p className="text-sm text-gray-600">Smiles Transformed</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -top-8 -right-8 bg-white rounded-lg shadow-lg p-4 border hidden sm:block">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
-                  <Star className="w-6 h-6 text-yellow-600 fill-current" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 line-through">$495</p>
-                  <p className="text-sm text-green-600 font-bold">Value - FREE</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
