@@ -53,11 +53,40 @@ export default function QuizPage() {
     setUserInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data (answers + userInfo) to a backend or CRM
-    console.log({ answers, userInfo });
-    setIsSubmitted(true);
+    
+    // Prepare form data for Netlify
+    const formData = new FormData();
+    formData.append('form-name', 'dental-quiz');
+    formData.append('name', userInfo.name);
+    formData.append('email', userInfo.email);
+    formData.append('phone', userInfo.phone);
+    formData.append('concern', answers.concern || '');
+    formData.append('notCandidate', answers.notCandidate || '');
+    formData.append('timeline', answers.timeline || '');
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (response.ok) {
+        console.log('Form submitted successfully to Netlify');
+        setIsSubmitted(true);
+      } else {
+        console.error('Form submission failed');
+        // Still show success to user, but log error
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success to user, but log error
+      setIsSubmitted(true);
+    }
   };
 
   return (
@@ -94,18 +123,48 @@ export default function QuizPage() {
                     <p className="text-center text-gray-600">Enter your details to see your results and claim your Free Consultation.</p>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form name="dental-quiz" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
+                      <input type="hidden" name="form-name" value="dental-quiz" />
+                      
+                      {/* Hidden fields for quiz answers */}
+                      <input type="hidden" name="concern" value={answers.concern || ''} />
+                      <input type="hidden" name="notCandidate" value={answers.notCandidate || ''} />
+                      <input type="hidden" name="timeline" value={answers.timeline || ''} />
+                      
                       <div>
                         <Label htmlFor="name">Full Name *</Label>
-                        <Input id="name" placeholder="John Doe" required onChange={handleUserInfoChange} value={userInfo.name} />
+                        <Input 
+                          id="name" 
+                          name="name"
+                          placeholder="John Doe" 
+                          required 
+                          onChange={handleUserInfoChange} 
+                          value={userInfo.name} 
+                        />
                       </div>
                       <div>
                         <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" placeholder="john@example.com" required onChange={handleUserInfoChange} value={userInfo.email} />
+                        <Input 
+                          id="email" 
+                          name="email"
+                          type="email" 
+                          placeholder="john@example.com" 
+                          required 
+                          onChange={handleUserInfoChange} 
+                          value={userInfo.email} 
+                        />
                       </div>
                       <div>
                         <Label htmlFor="phone">Phone *</Label>
-                        <Input id="phone" type="tel" placeholder="(772) 123-4567" required onChange={handleUserInfoChange} value={userInfo.phone} />
+                        <Input 
+                          id="phone" 
+                          name="phone"
+                          type="tel" 
+                          placeholder="(772) 123-4567" 
+                          required 
+                          onChange={handleUserInfoChange} 
+                          value={userInfo.phone} 
+                        />
                       </div>
                       <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-3">
                         <Sparkles className="w-5 h-5 mr-2" />
