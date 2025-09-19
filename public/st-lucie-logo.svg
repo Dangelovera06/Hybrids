@@ -1,0 +1,18 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="60" rx="8" fill="#2563eb"/>
+  
+  <!-- Tooth Icon -->
+  <path d="M15 15C12 15 9.5 17.5 9.5 20.5V24H12V20.5C12 18.5 13.5 17 15 17C16.5 17 18 18.5 18 20.5V24H20.5V20.5C20.5 17.5 18 15 15 15Z" fill="white"/>
+  <path d="M8 29V41C8 43.5 10 45.5 12.5 45.5H17.5C20 45.5 22 43.5 22 41V29H8Z" fill="white"/>
+  <circle cx="12" cy="35" r="1.5" fill="#2563eb"/>
+  <circle cx="18" cy="35" r="1.5" fill="#2563eb"/>
+  <path d="M13 39C13 40 14 41 15 41H15C16 41 17 40 17 39" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Text -->
+  <text x="30" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">St. Lucie Center</text>
+  <text x="30" y="40" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.9">Cosmetic Dentistry</text>
+  
+  <!-- Decorative line -->
+  <line x1="30" y1="28" x2="180" y2="28" stroke="white" stroke-width="1" opacity="0.3"/>
+</svg>

@@ -68,7 +68,7 @@ export default function QuizPage() {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">SC</div>
+            <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/2ab4892a3_favicon.png" alt="Logo" className="h-8 w-auto" />
             <span className="font-bold text-lg text-gray-900">AOX Implant Dentures Quiz
             </span>
           </div>

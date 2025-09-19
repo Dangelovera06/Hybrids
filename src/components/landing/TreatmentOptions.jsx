@@ -16,7 +16,7 @@ import {
 export default function TreatmentOptions() {
   const treatments = [
     {
-      image: null,
+      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/738c59a50_SINGLE.png",
       title: "Single Dental Implant",
       price: "$3,999",
       description: "Natural-looking, permanent replacement",
@@ -27,11 +27,10 @@ export default function TreatmentOptions() {
       ],
       note: "May require bone grafting or sedation based on needs.",
       color: "blue",
-      popular: false,
-      icon: Smile
+      popular: false
     },
     {
-      image: null,
+      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/609454a09_SUPPORT.png",
       title: "Implant-Supported Denture",
       price: "$14,500",
       description: "Secured by up to 4 implants — no slipping",
@@ -42,11 +41,10 @@ export default function TreatmentOptions() {
       ],
       note: "Great for multiple missing teeth needing stability.",
       color: "green",
-      popular: false,
-      icon: SmilePlus
+      popular: false
     },
     {
-      image: null,
+      image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/19238fed2_ALLON4.png",
       title: "All-on-4 Fixed Full Arch",
       price: "$14,995",
       description: "Full-smile restoration in one visit",
@@ -57,8 +55,7 @@ export default function TreatmentOptions() {
       ],
       note: "Most popular option for complete smile makeovers.",
       color: "purple",
-      popular: true,
-      icon: Crown
+      popular: true
     }
   ];
 
@@ -94,15 +91,6 @@ export default function TreatmentOptions() {
               )}
 
               <CardHeader className="text-center pb-4">
-                <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 ${
-                  treatment.color === 'blue' ? 'bg-blue-100' :
-                  treatment.color === 'green' ? 'bg-green-100' : 'bg-purple-100'
-                }`}>
-                  <treatment.icon className={`w-8 h-8 ${
-                    treatment.color === 'blue' ? 'text-blue-600' :
-                    treatment.color === 'green' ? 'text-green-600' : 'text-purple-600'
-                  }`} />
-                </div>
                 <CardTitle className="text-xl mb-2">{treatment.title}</CardTitle>
                 <div className="text-3xl font-bold text-gray-900 mb-2">
                   Starting from {treatment.price}
@@ -111,6 +99,11 @@ export default function TreatmentOptions() {
               </CardHeader>
 
               <CardContent>
+                {treatment.image && (
+                  <div className="mb-6 px-4">
+                    <img src={treatment.image} alt={treatment.title} className="w-full h-auto rounded-lg" />
+                  </div>
+                )}
                 <ul className="space-y-3 mb-6">
                   {treatment.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start space-x-3">

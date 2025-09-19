@@ -86,15 +86,11 @@ export default function HeroSection() {
           <div className="relative">
             {/* Hero Image Container */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-3xl">🦷</span>
-                  </div>
-                  <p className="text-gray-600 font-medium text-lg">Smile Transformation</p>
-                  <p className="text-gray-500 text-sm">Before & After</p>
-                </div>
-              </div>
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/f3d177ba7_faslc.png"
+                alt="Before and after smile transformation"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Floating Stats Cards */}

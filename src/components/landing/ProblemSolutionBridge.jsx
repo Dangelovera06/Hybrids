@@ -16,14 +16,11 @@ export default function ProblemSolutionBridge() {
           
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <div className="w-full h-80 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl">😊</span>
-                  </div>
-                  <p className="text-gray-600 font-medium">Happy Family</p>
-                </div>
-              </div>
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/26e606aa1_familypic.png"
+                alt="Happy family enjoying quality time together"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
