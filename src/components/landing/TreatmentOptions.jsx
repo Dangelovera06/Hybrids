@@ -18,7 +18,6 @@ export default function TreatmentOptions() {
     {
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/738c59a50_SINGLE.png",
       title: "Single Dental Implant",
-      price: "$3,999",
       description: "Natural-looking, permanent replacement",
       features: [
         "Easy to maintain, lifetime durability",
@@ -32,7 +31,6 @@ export default function TreatmentOptions() {
     {
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/609454a09_SUPPORT.png",
       title: "Implant-Supported Denture",
-      price: "$14,500",
       description: "Secured by up to 4 implants — no slipping",
       features: [
         "Improved chewing + confidence",
@@ -46,7 +44,6 @@ export default function TreatmentOptions() {
     {
       image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/19238fed2_ALLON4.png",
       title: "All-on-4 Fixed Full Arch",
-      price: "$14,995",
       description: "Full-smile restoration in one visit",
       features: [
         "Our most durable, long-term solution",
@@ -92,9 +89,6 @@ export default function TreatmentOptions() {
 
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-xl mb-2">{treatment.title}</CardTitle>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
-                  Starting from {treatment.price}
-                </div>
                 <p className="text-gray-600">{treatment.description}</p>
               </CardHeader>
 
@@ -124,7 +118,7 @@ export default function TreatmentOptions() {
                   variant={treatment.popular ? "default" : "outline"}
                   onClick={goToQuiz}
                 >
-                  Start The 60-Second Quiz
+                  Get Pricing
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
@@ -138,11 +132,11 @@ export default function TreatmentOptions() {
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
             onClick={goToQuiz}
           >
-            Start My Free 60-Second Quiz
+            Get My Free Consultation
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
           <p className="mt-4 text-gray-600">
-            Not sure which option is right for you? Our 60-second quiz will help determine the best solution.
+            Not sure which option is right for you? Schedule a free consultation to determine the best solution.
           </p>
         </div>
       </div>
