@@ -86,8 +86,8 @@ export default function Home() {
       {/* Page Sections */}
       <HeroSection />
       <ProblemSolutionBridge />
-      <TreatmentOptions />
       <SocialProofSection />
+      <TreatmentOptions />
       <WhatsIncluded />
       <FuturePaceSection />
       <FAQSection />
