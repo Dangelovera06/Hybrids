@@ -20,6 +20,7 @@ import {
 "lucide-react";
 
 import HeroSection from "../components/landing/HeroSection";
+import StatsSection from "../components/landing/StatsSection";
 import ProblemSolutionBridge from "../components/landing/ProblemSolutionBridge";
 import TreatmentOptions from "../components/landing/TreatmentOptions";
 import SocialProofSection from "../components/landing/SocialProofSection";
@@ -85,43 +86,7 @@ export default function Home() {
 
       {/* Page Sections */}
       <HeroSection />
-      
-      {/* Stats Section */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Star className="w-8 h-8 text-yellow-500 fill-current" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">4.9</div>
-              <div className="text-sm text-gray-600">Rating</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="w-8 h-8 text-green-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">1,132</div>
-              <div className="text-sm text-gray-600">Smiles Transformed</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                <Users className="w-8 h-8 text-purple-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">10+</div>
-              <div className="text-sm text-gray-600">Years Experience</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="w-8 h-8 text-blue-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900">Same Day</div>
-              <div className="text-sm text-gray-600">Results</div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+      <StatsSection />
       <ProblemSolutionBridge />
       <TreatmentOptions />
       <WhatsIncluded />
