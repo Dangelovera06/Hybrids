@@ -54,19 +54,16 @@ export default function Home() {
               <button
                 onClick={() => scrollToSection('treatments')}
                 className="text-gray-600 hover:text-blue-600 transition-colors">
-
                 Treatments
               </button>
               <button
                 onClick={() => scrollToSection('testimonials')}
                 className="text-gray-600 hover:text-blue-600 transition-colors">
-
                 Patient Stories
               </button>
               <button
                 onClick={() => scrollToSection('faq')}
                 className="text-gray-600 hover:text-blue-600 transition-colors">
-
                 FAQ
               </button>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -77,7 +74,6 @@ export default function Home() {
             <Button
               onClick={goToQuiz}
               className="bg-blue-600 hover:bg-blue-700 text-white">
-
               Start My Quiz
             </Button>
           </div>
@@ -148,6 +144,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>);
-
+    </div>
+  );
 }
