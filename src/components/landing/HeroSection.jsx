@@ -72,6 +72,22 @@ export default function HeroSection() {
                 alt="Before and after smile transformation"
                 className="w-full h-full object-cover"
               />
+              
+              {/* Price Overlay */}
+              <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-gray-900 px-3 py-2 rounded-md shadow-xl border border-gray-200">
+                <div className="text-center">
+                  <div className="text-xs text-gray-600 font-medium">Normally $495</div>
+                  <div className="text-sm font-bold text-red-600">FREE Today</div>
+                </div>
+              </div>
+
+              {/* Trust Badge */}
+              <div className="absolute bottom-6 left-6 bg-blue-600 text-white px-3 py-2 rounded-md shadow-xl">
+                <div className="text-center">
+                  <div className="text-xs font-medium">Same Day</div>
+                  <div className="text-sm font-bold">Results</div>
+                </div>
+              </div>
             </div>
 
           </div>

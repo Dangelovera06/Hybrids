@@ -5,7 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { 
   Quote,
   Play,
-  Heart
+  Heart,
+  Star,
+  Award
 } from "lucide-react";
 
 export default function SocialProofSection() {

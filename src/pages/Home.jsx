@@ -3,21 +3,11 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  Star,
-  CheckCircle,
-  Users,
-  Award,
   Phone,
   MapPin,
-  Clock,
-  ChevronDown,
-  Smile,
-  Heart,
-  Shield } from
-"lucide-react";
+  Clock
+} from "lucide-react";
 
 import HeroSection from "../components/landing/HeroSection";
 import StatsSection from "../components/landing/StatsSection";
