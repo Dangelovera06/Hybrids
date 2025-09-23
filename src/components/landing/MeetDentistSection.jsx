@@ -69,10 +69,15 @@ export default function MeetDentistSection() {
           {/* Right Side - Doctor Video */}
           <div className="bg-white rounded-xl p-6 shadow-lg">
             <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Watch our Short Video to learn more</h3>
-            <div className="aspect-video rounded-lg overflow-hidden shadow-lg group cursor-pointer">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
-                <Play className="w-16 h-16 text-blue-600 group-hover:text-blue-700 transition-colors" fill="currentColor" />
-              </div>
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/1vQFii3kun0"
+                title="Meet Your Dentist - Dr. Introduction Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
