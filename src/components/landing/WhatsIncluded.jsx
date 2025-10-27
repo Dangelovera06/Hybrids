@@ -45,24 +45,24 @@ export default function WhatsIncluded() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <Badge className="bg-green-100 text-green-700 mb-4">
             <Gift className="w-4 h-4 mr-2" />
             Limited Time Offer
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What You Get —{" "}
             <span className="text-green-600">Completely Free</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             This comprehensive consultation normally costs $495. 
             This month, it's completely free with no strings attached.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {includedItems.map((item, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-2 border-gray-100 hover:border-blue-200">
               <CardHeader>

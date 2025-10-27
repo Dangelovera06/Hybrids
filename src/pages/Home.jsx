@@ -1,12 +1,14 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import {
   Phone,
   MapPin,
-  Clock
+  Clock,
+  Menu,
+  X
 } from "lucide-react";
 
 import HeroSection from "../components/landing/HeroSection";
@@ -20,11 +22,13 @@ import FAQSection from "../components/landing/FAQSection";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: 'smooth'
     });
+    setMobileMenuOpen(false);
   };
 
   const goToQuiz = () => {
@@ -40,6 +44,8 @@ export default function Home() {
             <div className="flex items-center">
               <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/2ab4892a3_favicon.png" alt="St. Lucie Center Logo" className="h-8 w-auto" />
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection('treatments')}
@@ -61,12 +67,51 @@ export default function Home() {
                 <span>(772) 465-2825</span>
               </div>
             </div>
-            <Button
-              onClick={goToQuiz}
-              className="bg-blue-600 hover:bg-blue-700 text-white">
-              Start My Quiz
-            </Button>
+
+            {/* Mobile Navigation */}
+            <div className="flex items-center space-x-3">
+              <Button
+                onClick={goToQuiz}
+                size="sm"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-2">
+                <span className="hidden sm:inline">Start My Quiz</span>
+                <span className="sm:hidden">Quiz</span>
+              </Button>
+              
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors">
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
+              <div className="px-4 py-3 space-y-3">
+                <button
+                  onClick={() => scrollToSection('treatments')}
+                  className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-2">
+                  Treatments
+                </button>
+                <button
+                  onClick={() => scrollToSection('testimonials')}
+                  className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-2">
+                  Patient Stories
+                </button>
+                <button
+                  onClick={() => scrollToSection('faq')}
+                  className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-2">
+                  FAQ
+                </button>
+                <div className="flex items-center space-x-2 text-sm text-gray-600 py-2">
+                  <Phone className="w-4 h-4" />
+                  <span>(772) 465-2825</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

@@ -40,14 +40,14 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-16 bg-gray-50">
+    <section id="faq" className="py-12 sm:py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Questions? We Have{" "}
             <span className="text-blue-600">Answers</span>
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600">
             Here are the most common concerns our patients have. 
             Still have questions? Ask during your free consultation.
           </p>
@@ -58,32 +58,32 @@ export default function FAQSection() {
             <Card key={index} className="overflow-hidden hover:shadow-md transition-all duration-300">
               <CardContent className="p-0">
                 <button
-                  className="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors duration-200"
                   onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className={`p-2 rounded-lg bg-gray-100`}>
-                        <faq.icon className={`w-5 h-5 ${faq.color}`} />
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className={`p-1.5 sm:p-2 rounded-lg bg-gray-100`}>
+                        <faq.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${faq.color}`} />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 pr-2">
                         {faq.question}
                       </h3>
                     </div>
                     <div className="flex-shrink-0">
                       {openIndex === index ? (
-                        <ChevronDown className="w-5 h-5 text-gray-600" />
+                        <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                       ) : (
-                        <ChevronRight className="w-5 h-5 text-gray-600" />
+                        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                       )}
                     </div>
                   </div>
                 </button>
                 
                 {openIndex === index && (
-                  <div className="px-6 pb-6 pt-0">
-                    <div className="pl-16">
-                      <p className="text-gray-700 leading-relaxed">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+                    <div className="pl-8 sm:pl-16">
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -95,27 +95,27 @@ export default function FAQSection() {
         </div>
 
         {/* Additional Support */}
-        <div className="mt-12 text-center">
-          <div className="bg-white rounded-xl p-8 shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+        <div className="mt-8 sm:mt-12 text-center">
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
               Still Have Questions?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               Every patient is unique, and we're here to address your specific concerns. 
               During your free consultation, you'll have plenty of time to ask questions and get personalized answers.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <div className="flex items-center space-x-2 text-gray-600">
-                <Clock className="w-5 h-5" />
-                <span>60-minute consultation</span>
+                <Clock className="w-4 sm:w-5 h-4 sm:h-5" />
+                <span className="text-sm sm:text-base">60-minute consultation</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-600">
-                <Shield className="w-5 h-5" />
-                <span>No pressure, no sales pitch</span>
+                <Shield className="w-4 sm:w-5 h-4 sm:h-5" />
+                <span className="text-sm sm:text-base">No pressure, no sales pitch</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-600">
-                <HelpCircle className="w-5 h-5" />
-                <span>All questions welcome</span>
+                <HelpCircle className="w-4 sm:w-5 h-4 sm:h-5" />
+                <span className="text-sm sm:text-base">All questions welcome</span>
               </div>
             </div>
           </div>

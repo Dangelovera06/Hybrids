@@ -62,20 +62,20 @@ export default function TreatmentOptions() {
   };
 
   return (
-    <section id="treatments" className="py-16 bg-white">
+    <section id="treatments" className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Which Smile Transformation{" "}
             <span className="text-blue-600">Is Right for You?</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Every patient is unique. We offer three proven solutions to restore your smile 
             and confidence, each tailored to your specific needs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {treatments.map((treatment, index) => (
             <Card key={index} className={`relative overflow-hidden hover:shadow-xl transition-all duration-300 ${treatment.popular ? 'ring-2 ring-blue-500' : ''}`}>
               {treatment.popular && (
@@ -126,16 +126,16 @@ export default function TreatmentOptions() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <Button 
             size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3"
             onClick={goToQuiz}
           >
             Get My Free Consultation
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
           </Button>
-          <p className="mt-4 text-gray-600">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 px-4">
             Not sure which option is right for you? Schedule a free consultation to determine the best solution.
           </p>
         </div>

@@ -19,7 +19,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-32 pb-16">
+    <section className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-20" />
@@ -27,36 +27,36 @@ export default function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
               You Could Have a{" "}
               <span className="text-blue-600 relative">
                 New Smile
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-blue-200/50 -z-10" />
+                <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-blue-200/50 -z-10" />
               </span>{" "}
               in <span className="underline">1 Day</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
               <span className="underline">Trusted by 1,000+ patients.</span> Our FREE Full-Arch Smile Preview includes a{" "}
               <strong className="text-gray-900">3D CT Scan, Smile Simulation, and Expert Evaluation</strong>{" "}
               — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
             </p>
 
-
             {/* CTA Button */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={goToQuiz}
               >
-                <Sparkles className="w-5 h-5 mr-2" />
-                Get My Free Smile Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+                <span className="hidden sm:inline">Get My Free Smile Consultation</span>
+                <span className="sm:hidden">Get Free Consultation</span>
+                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
               </Button>
               <p className="text-sm text-gray-500">
                 ⏰ Take our 60-second quiz to qualify
@@ -64,32 +64,31 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
             {/* Hero Image Container */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <img
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/f3d177ba7_faslc.png"
                 alt="Before and after smile transformation"
-                className="w-full h-full object-cover"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover"
               />
               
               {/* Price Overlay */}
-              <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-gray-900 px-3 py-2 rounded-md shadow-xl border border-gray-200">
+              <div className="absolute top-3 sm:top-6 right-3 sm:right-6 bg-white/95 backdrop-blur-sm text-gray-900 px-2 sm:px-3 py-1 sm:py-2 rounded-md shadow-xl border border-gray-200">
                 <div className="text-center">
                   <div className="text-xs text-gray-600 font-medium">Normally $495</div>
-                  <div className="text-sm font-bold text-red-600">FREE Today</div>
+                  <div className="text-xs sm:text-sm font-bold text-red-600">FREE Today</div>
                 </div>
               </div>
 
               {/* Trust Badge */}
-              <div className="absolute bottom-6 left-6 bg-blue-600 text-white px-3 py-2 rounded-md shadow-xl">
+              <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 bg-blue-600 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-md shadow-xl">
                 <div className="text-center">
                   <div className="text-xs font-medium">Same Day</div>
-                  <div className="text-sm font-bold">Results</div>
+                  <div className="text-xs sm:text-sm font-bold">Results</div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

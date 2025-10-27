@@ -40,21 +40,20 @@ export default function SocialProofSection() {
 
 
   return (
-    <section id="testimonials" className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+    <section id="testimonials" className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 to-blue-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Real Patients. Real{" "}
             <span className="text-blue-600">Transformations.</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Don't take our word for it. Here's what our patients are saying about their life-changing experiences.
           </p>
         </div>
 
-
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300">
               <CardContent className="p-6">
@@ -100,29 +99,29 @@ export default function SocialProofSection() {
         </div>
 
         {/* Video Testimonials Section */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="mt-12 sm:mt-16 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-lg">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               Watch Real Patient Stories
             </h3>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               See the emotional transformations and hear directly from patients about their journey.
             </p>
           </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                      <iframe
-                        className="w-full h-full"
-                        src="https://www.youtube.com/embed/wNI9Y1LZCO8"
-                        title="Patient Testimonial Video 1"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/wNI9Y1LZCO8"
+                title="Patient Testimonial Video 1"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
 
-            <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+            <div className="aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/P_juMNswLZQ"
@@ -136,18 +135,18 @@ export default function SocialProofSection() {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-8 opacity-60">
+        <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-60">
           <div className="flex items-center space-x-2">
-            <Heart className="w-5 h-5 text-red-500" />
-            <span className="text-sm text-gray-600">Trusted by 1000+ families</span>
+            <Heart className="w-4 sm:w-5 h-4 sm:h-5 text-red-500" />
+            <span className="text-xs sm:text-sm text-gray-600">Trusted by 1000+ families</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Award className="w-5 h-5 text-yellow-500" />
-            <span className="text-sm text-gray-600">Award-winning practice</span>
+            <Award className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-500" />
+            <span className="text-xs sm:text-sm text-gray-600">Award-winning practice</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Star className="w-5 h-5 text-yellow-400 fill-current" />
-            <span className="text-sm text-gray-600">4.9/5 patient satisfaction</span>
+            <Star className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400 fill-current" />
+            <span className="text-xs sm:text-sm text-gray-600">4.9/5 patient satisfaction</span>
           </div>
         </div>
       </div>
