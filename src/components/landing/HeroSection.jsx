@@ -47,10 +47,32 @@ export default function HeroSection() {
           </p>
 
           {/* Video Title */}
-          <div className="mb-6">
+          <div className="mb-4">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
               The Procedure That Changed His Life
             </h3>
+          </div>
+
+          {/* VSL Video Container */}
+          <div className="relative mb-6">
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-black">
+              {/* Wistia Video Player */}
+              <div className="relative">
+                <wistia-player
+                  media-id="bj6epe6th1"
+                  aspect="1.7777777777777777"
+                  className="w-full"
+                ></wistia-player>
+              </div>
+
+              {/* Price Overlay */}
+              <div className="absolute top-3 sm:top-6 right-3 sm:right-6 bg-white/95 backdrop-blur-sm text-gray-900 px-2 sm:px-3 py-1 sm:py-2 rounded-md shadow-xl border border-gray-200 z-10">
+                <div className="text-center">
+                  <div className="text-xs text-gray-600 font-medium">Normally $495</div>
+                  <div className="text-xs sm:text-sm font-bold text-red-600">FREE Today</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -72,25 +94,7 @@ export default function HeroSection() {
           </div>
 
           <div className="relative mt-8 lg:mt-0">
-            {/* VSL Video Container */}
-            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-black">
-              {/* Wistia Video Player */}
-              <div className="relative">
-                <wistia-player 
-                  media-id="bj6epe6th1" 
-                  aspect="1.7777777777777777"
-                  className="w-full"
-                ></wistia-player>
-              </div>
-              
-              {/* Price Overlay */}
-              <div className="absolute top-3 sm:top-6 right-3 sm:right-6 bg-white/95 backdrop-blur-sm text-gray-900 px-2 sm:px-3 py-1 sm:py-2 rounded-md shadow-xl border border-gray-200 z-10">
-                <div className="text-center">
-                  <div className="text-xs text-gray-600 font-medium">Normally $495</div>
-                  <div className="text-xs sm:text-sm font-bold text-red-600">FREE Today</div>
-                </div>
-              </div>
-            </div>
+            {/* Empty space or additional content can go here */}
           </div>
         </div>
       </div>
