@@ -16,6 +16,7 @@ import MeetDentistSection from "../components/landing/MeetDentistSection";
 import ProblemSolutionBridge from "../components/landing/ProblemSolutionBridge";
 import TreatmentOptions from "../components/landing/TreatmentOptions";
 import SocialProofSection from "../components/landing/SocialProofSection";
+import TransformationGallery from "../components/landing/TransformationGallery";
 import WhatsIncluded from "../components/landing/WhatsIncluded";
 import FuturePaceSection from "../components/landing/FuturePaceSection";
 import FAQSection from "../components/landing/FAQSection";
@@ -120,6 +121,7 @@ export default function Home() {
       <MeetDentistSection />
       <ProblemSolutionBridge />
       <SocialProofSection />
+      <TransformationGallery />
       <TreatmentOptions />
       <WhatsIncluded />
       <FuturePaceSection />

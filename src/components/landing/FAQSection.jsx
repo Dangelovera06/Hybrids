@@ -28,7 +28,7 @@ export default function FAQSection() {
     {
       icon: Shield,
       question: "Is it painful?",
-      answer: "We offer sedation. Most patients say they felt nothing during the procedure and are surprised by how comfortable they were. We use the latest pain management techniques, and many patients return to work the next day. Your comfort is our priority throughout the entire process.",
+      answer: "We offer sedation. Most patients say they felt nothing during the procedure and are surprised by how comfortable they were. We use the latest pain management techniques, and patients return to work shortly after their procedures. Your comfort is our priority throughout the entire process.",
       color: "text-purple-600"
     },
     {
