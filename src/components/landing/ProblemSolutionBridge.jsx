@@ -17,8 +17,8 @@ export default function ProblemSolutionBridge() {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68cb22ce16a6085c07946090/26e606aa1_familypic.png"
-                alt="Happy family enjoying quality time together"
+                src="/quality-of-life-smile.jpg"
+                alt="Happy patient with beautiful smile showing quality of life transformation"
                 className="w-full h-48 sm:h-56 md:h-64 object-cover"
               />
             </div>

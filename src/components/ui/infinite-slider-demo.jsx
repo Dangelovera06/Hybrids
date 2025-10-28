@@ -2,12 +2,7 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
 export function InfiniteSliderBasic() {
   return (
-    <InfiniteSlider gap={24} reverse className="w-full bg-transparent" duration={30} durationOnHover={60}>
-      <img
-        src="/BEFORE AND AFTER/82D0A581-51C2-4F96-BBD9-B179D38F3A6E.JPEG"
-        alt="Before and after dental transformation"
-        className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
-      />
+    <InfiniteSlider gap={24} reverse className="w-full bg-transparent" duration={60} durationOnHover={120}>
       <img
         src="/BEFORE AND AFTER/B6AB6AC7-CA17-4ED0-BD45-D68CFB61A74B.JPG"
         alt="Before and after dental transformation"
@@ -29,17 +24,12 @@ export function InfiniteSliderBasic() {
         className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
       />
       <img
-        src="/BEFORE AND AFTER/Implant Denture Before After.jpg"
-        alt="Before and after dental transformation"
-        className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
-      />
-      <img
-        src="/BEFORE AND AFTER/Implant Dentures Upper and Lower.JPEG"
-        alt="Before and after dental transformation"
-        className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
-      />
-      <img
         src="/BEFORE AND AFTER/BEFORE.png.PNG"
+        alt="Before and after dental transformation"
+        className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
+      />
+      <img
+        src="/BEFORE AND AFTER/BEFORE.zip - 1.PNG"
         alt="Before and after dental transformation"
         className="h-[300px] w-auto rounded-lg shadow-lg object-cover"
       />

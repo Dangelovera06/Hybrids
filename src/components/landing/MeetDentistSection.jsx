@@ -26,12 +26,14 @@ export default function MeetDentistSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl transform rotate-3"></div>
               <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
                 <img
-                  src="/Screenshot 2025-10-28 at 11.19.10 AM.png"
+                  src="/doc.png"
                   alt="Dr. Hans Almanzar - Lead Cosmetic Dentist"
                   className="w-full h-96 sm:h-[500px] object-cover rounded-xl"
                   onError={(e) => {
                     console.log('Image failed to load:', e.target.src);
                     e.target.style.border = '2px solid red';
+                    // Fallback to a working image
+                    e.target.src = "/logo.svg";
                   }}
                 />
                 <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg">

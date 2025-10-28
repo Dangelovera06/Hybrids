@@ -1,5 +1,5 @@
 import React from "react";
-import { InfiniteSliderBasic, InfiniteSliderReverse } from "@/components/ui/infinite-slider-demo";
+import { InfiniteSliderBasic } from "@/components/ui/infinite-slider-demo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
@@ -36,9 +36,8 @@ export default function TransformationGallery() {
         </div>
 
         {/* Infinite Slider Gallery */}
-        <div className="mb-8 sm:mb-12 space-y-6">
+        <div className="mb-8 sm:mb-12">
           <InfiniteSliderBasic />
-          <InfiniteSliderReverse />
         </div>
 
         {/* Call to Action */}
