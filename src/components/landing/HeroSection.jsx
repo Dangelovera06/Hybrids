@@ -39,36 +39,36 @@ export default function HeroSection() {
               in <span className="underline">1 Day</span>
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              <span className="underline">Trusted by 1,000+ patients.</span> Our FREE Full-Arch Smile Preview includes a{" "}
-              <strong className="text-gray-900">3D CT Scan, Smile Simulation, and Expert Evaluation</strong>{" "}
-              — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
+          {/* Subheadline */}
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+            <span className="underline">Trusted by 1,000+ patients.</span> Our FREE Full-Arch Smile Preview includes a{" "}
+            <strong className="text-gray-900">3D CT Scan, Smile Simulation, and Expert Evaluation</strong>{" "}
+            — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
+          </p>
+
+          {/* Video Title */}
+          <div className="mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
+              The Procedure That Changed His Life
+            </h3>
+          </div>
+
+          {/* CTA Button */}
+          <div className="space-y-3 sm:space-y-4">
+            <Button
+              size="lg"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 shadow-blue-500/25 hover:shadow-blue-500/40 ring-2 ring-blue-500/20 hover:ring-blue-500/30"
+              onClick={goToQuiz}
+            >
+              <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+              <span className="hidden sm:inline">Get My Free Smile Consultation</span>
+              <span className="sm:hidden">Get Free Consultation</span>
+              <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
+            </Button>
+            <p className="text-sm text-gray-500">
+              ⏰ Take our 60-second quiz to qualify
             </p>
-
-            {/* CTA Button */}
-            <div className="space-y-3 sm:space-y-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 shadow-blue-500/25 hover:shadow-blue-500/40 ring-2 ring-blue-500/20 hover:ring-blue-500/30"
-                onClick={goToQuiz}
-              >
-                <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
-                <span className="hidden sm:inline">Get My Free Smile Consultation</span>
-                <span className="sm:hidden">Get Free Consultation</span>
-                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
-              </Button>
-              <p className="text-sm text-gray-500">
-                ⏰ Take our 60-second quiz to qualify
-              </p>
-            </div>
-
-            {/* Video Title */}
-            <div className="mt-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
-                The Procedure That Changed His Life
-              </h3>
-            </div>
+          </div>
           </div>
 
           <div className="relative mt-8 lg:mt-0">
