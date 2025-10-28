@@ -46,6 +46,13 @@ export default function HeroSection() {
               — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
             </p>
 
+            {/* Video Title */}
+            <div className="mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
+                The Procedure That Changed His Life
+              </h3>
+            </div>
+
             {/* CTA Button */}
             <div className="space-y-3 sm:space-y-4">
               <Button
@@ -65,13 +72,6 @@ export default function HeroSection() {
           </div>
 
           <div className="relative mt-8 lg:mt-0">
-            {/* Video Title */}
-            <div className="text-center lg:text-left mb-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                The Procedure That Changed His Life
-              </h3>
-            </div>
-            
             {/* VSL Video Container */}
             <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-black">
               {/* Wistia Video Player */}
