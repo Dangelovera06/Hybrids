@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Award,
-  GraduationCap,
-  Users,
-  Star
-} from "lucide-react";
+import { Award, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function MeetDentistSection() {
@@ -46,65 +41,22 @@ export default function MeetDentistSection() {
           </div>
 
           {/* Right Side - Doctor Information */}
-          <div className="space-y-8 order-2 lg:order-2">
-            <div className="space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Excellence in Cosmetic Dentistry
+          <div className="space-y-6 order-2 lg:order-2">
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Dr. Hans Almanzar DDS, FAAIP, MICOI
               </h3>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                Dr. Hans Almanzar is a board-certified cosmetic dentist specializing in full-arch restorations and dental implants. 
-                With a passion for transforming lives through beautiful smiles, he has successfully completed over 1,000 smile makeovers.
+                Dr. Hans Almanzar graduated dental school in 2013 and spent an additional 2 years at New York Langone Hospitals (NYU) 
+                obtaining an Advanced Education in General Dentistry with a focus on Oral Surgery. He holds prestigious certifications as 
+                a Master of The International Congress of Oral Implantologists and Fellow of American Academy of Implant Prosthodontics.
               </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Advanced Training</h4>
-                  <p className="text-sm text-gray-600">Specialized in implant dentistry and full-arch rehabilitation</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-green-600" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">1,000+ Patients</h4>
-                  <p className="text-sm text-gray-600">Successfully transformed smiles across Port St. Lucie</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Award className="w-6 h-6 text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Award Winning</h4>
-                  <p className="text-sm text-gray-600">Recognized for excellence in cosmetic dentistry</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Star className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">15+ Years</h4>
-                  <p className="text-sm text-gray-600">Dedicated to perfecting smiles and restoring confidence</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
-              <blockquote className="text-lg italic text-gray-800 mb-3">
-                "My mission is simple: to give every patient the confidence that comes with a beautiful, healthy smile. 
-                Every transformation is a life changed."
-              </blockquote>
-              <cite className="text-sm font-semibold text-blue-600">— Dr. Hans Almanzar</cite>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mt-4">
+                With over 450 hours of continued education in implant sinus lifts, cosmetic dentistry, and restorative dentistry, 
+                Dr. Almanzar provides comprehensive implant dentistry and Invisalign services. He and his wife Kelsi are passionate 
+                about helping people through dentistry, having participated in dental missions to Jamaica and Guatemala while 
+                providing free dental care to those in need.
+              </p>
             </div>
           </div>
         </div>
