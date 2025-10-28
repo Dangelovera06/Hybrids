@@ -21,6 +21,7 @@ import TransformationGallery from "../components/landing/TransformationGallery";
 import WhatsIncluded from "../components/landing/WhatsIncluded";
 import FuturePaceSection from "../components/landing/FuturePaceSection";
 import FAQSection from "../components/landing/FAQSection";
+import ConsultationVideoSection from "../components/landing/ConsultationVideoSection";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -127,6 +128,7 @@ export default function Home() {
       <TreatmentOptions />
       <WhatsIncluded />
       <FuturePaceSection />
+      <ConsultationVideoSection />
       <FAQSection />
 
       {/* Footer */}
