@@ -17,7 +17,7 @@ export default function ProblemSolutionBridge() {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/quality-of-life-smile.jpg"
+                src="/Screenshot 2025-10-28 at 11.19.10 AM.png"
                 alt="Happy patient with beautiful smile showing quality of life transformation"
                 className="w-full h-48 sm:h-56 md:h-64 object-cover"
               />
