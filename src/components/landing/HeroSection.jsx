@@ -65,6 +65,13 @@ export default function HeroSection() {
           </div>
 
           <div className="relative mt-8 lg:mt-0">
+            {/* Video Title */}
+            <div className="text-center lg:text-left mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                The Procedure That Changed His Life
+              </h3>
+            </div>
+            
             {/* VSL Video Container */}
             <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-black">
               {/* Wistia Video Player */}
@@ -81,14 +88,6 @@ export default function HeroSection() {
                 <div className="text-center">
                   <div className="text-xs text-gray-600 font-medium">Normally $495</div>
                   <div className="text-xs sm:text-sm font-bold text-red-600">FREE Today</div>
-                </div>
-              </div>
-
-              {/* VSL Badge */}
-              <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 bg-red-600 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-md shadow-xl z-10">
-                <div className="text-center">
-                  <div className="text-xs font-medium">WATCH</div>
-                  <div className="text-xs sm:text-sm font-bold">FREE VIDEO</div>
                 </div>
               </div>
             </div>
