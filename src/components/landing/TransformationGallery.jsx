@@ -1,5 +1,5 @@
 import React from "react";
-import { ParallaxScrollSecondDemo } from "@/components/ui/parallax-scroll-demo";
+import { InfiniteSliderBasic, InfiniteSliderReverse } from "@/components/ui/infinite-slider-demo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
@@ -31,13 +31,14 @@ export default function TransformationGallery() {
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-8">
             These are real before and after photos from our patients who trusted us with their smile transformation. 
-            Each story represents a life changed and confidence restored.
+            Each story represents a life changed and confidence restored. Hover over the images to slow down and take a closer look.
           </p>
         </div>
 
-        {/* Parallax Gallery */}
-        <div className="mb-8 sm:mb-12">
-          <ParallaxScrollSecondDemo />
+        {/* Infinite Slider Gallery */}
+        <div className="mb-8 sm:mb-12 space-y-6">
+          <InfiniteSliderBasic />
+          <InfiniteSliderReverse />
         </div>
 
         {/* Call to Action */}
