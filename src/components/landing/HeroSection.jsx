@@ -46,18 +46,11 @@ export default function HeroSection() {
               — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
             </p>
 
-            {/* Video Title */}
-            <div className="mb-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
-                The Procedure That Changed His Life
-              </h3>
-            </div>
-
             {/* CTA Button */}
             <div className="space-y-3 sm:space-y-4">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 shadow-blue-500/25 hover:shadow-blue-500/40 ring-2 ring-blue-500/20 hover:ring-blue-500/30"
                 onClick={goToQuiz}
               >
                 <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
@@ -68,6 +61,13 @@ export default function HeroSection() {
               <p className="text-sm text-gray-500">
                 ⏰ Take our 60-second quiz to qualify
               </p>
+            </div>
+
+            {/* Video Title */}
+            <div className="mt-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center lg:text-left">
+                The Procedure That Changed His Life
+              </h3>
             </div>
           </div>
 
