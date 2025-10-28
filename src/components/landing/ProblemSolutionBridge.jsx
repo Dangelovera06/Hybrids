@@ -17,9 +17,13 @@ export default function ProblemSolutionBridge() {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/happy-smile.png"
+                src="/HAPPY%20SMILE%20%202.png"
                 alt="Happy patient with beautiful smile showing quality of life transformation"
                 className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                onError={(e) => {
+                  console.log('Happy smile image failed to load');
+                  e.target.src = "/logo.svg";
+                }}
               />
             </div>
           </div>
