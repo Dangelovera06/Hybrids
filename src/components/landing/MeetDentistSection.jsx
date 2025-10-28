@@ -26,7 +26,7 @@ export default function MeetDentistSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl transform rotate-3"></div>
               <div className="relative bg-white p-2 rounded-2xl shadow-2xl">
                 <img
-                  src="/doctor-image.jpg" // UPDATE THIS PATH with your uploaded doctor image
+                  src="/doc.png"
                   alt="Dr. Hans Almanzar - Lead Cosmetic Dentist"
                   className="w-full h-96 sm:h-[500px] object-cover rounded-xl"
                 />
