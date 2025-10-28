@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import HeroSection from "../components/landing/HeroSection";
+import HeaderVideoSection from "../components/landing/HeaderVideoSection";
 import MeetDentistSection from "../components/landing/MeetDentistSection";
 import DoctorVideoSection from "../components/landing/DoctorVideoSection";
 import ProblemSolutionBridge from "../components/landing/ProblemSolutionBridge";
@@ -119,9 +120,9 @@ export default function Home() {
 
       {/* Page Sections */}
       <HeroSection />
+      <HeaderVideoSection />
       <MeetDentistSection />
       <DoctorVideoSection />
-      <ProblemSolutionBridge />
       <SocialProofSection />
       <TransformationGallery />
       <TreatmentOptions />
