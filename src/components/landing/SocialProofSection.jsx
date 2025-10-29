@@ -109,7 +109,7 @@ export default function SocialProofSection() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
             <div className="aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
               <iframe
                 className="w-full h-full"
@@ -137,6 +137,17 @@ export default function SocialProofSection() {
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/HvZqxw_2INo"
                 title="Patient Testimonial Video 3"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <div className="aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/dmmSdXthVxc"
+                title="Patient Testimonial Video 4"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

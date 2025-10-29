@@ -31,12 +31,12 @@ export default function HeroSection() {
           <div className="max-w-4xl w-full text-center">
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-              You Could Have a{" "}
+              The Solution To{" "}
               <span className="text-blue-600 relative">
-                New Smile
+                Missing Teeth
                 <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-blue-200/50 -z-10" />
               </span>{" "}
-              in <span className="underline">1 Day</span>
+              and <span className="underline">Loose Dentures</span>
             </h1>
 
           {/* Subheadline */}
