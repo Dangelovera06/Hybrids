@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Google Sheets Integration</title>
+</head>
+<body>
+    <h1>Test Google Sheets Submission</h1>
+    <button onclick="testSubmission()">Test Submit to Google Sheets</button>
+    <div id="result"></div>
+
+    <script>
+        async function testSubmission() {
+            const testData = {
+                name: "Test User",
+                email: "test@example.com",
+                phone: "(772) 123-4567",
+                concern: "Missing teeth",
+                notCandidate: "No",
+                timeline: "ASAP"
+            };
+
+            try {
+                console.log('Sending test data:', testData);
+                
+                const response = await fetch('https://script.google.com/macros/s/AKfycbw6FtB_AxTlQ0ILB7e4EPfXa9VZvTkbsGEQTqStSpqvsYv9qHX5jL8AOgu4VYKZQAg5uw/exec', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+
+                console.log('Response status:', response.status);
+                console.log('Response ok:', response.ok);
+
+                const result = await response.text();
+                console.log('Response text:', result);
+
+                document.getElementById('result').innerHTML = `
+                    <h3>Response:</h3>
+                    <p><strong>Status:</strong> ${response.status}</p>
+                    <p><strong>OK:</strong> ${response.ok}</p>
+                    <p><strong>Result:</strong> ${result}</p>
+                `;
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = `
+                    <h3>Error:</h3>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

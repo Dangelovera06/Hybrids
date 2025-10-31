@@ -108,6 +108,25 @@ export default function QuizPage() {
         console.error('❌ Google Sheets submission failed:', googleSheetsResponse.reason);
       }
       
+      // Track successful quiz submission with Meta Pixel
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Dental Quiz Submission',
+          content_category: 'Quiz',
+          value: 495, // Value of free consultation
+          currency: 'USD',
+          lead_type: 'quiz_completion'
+        });
+        
+        // Also track as a custom event
+        window.fbq('trackCustom', 'QuizCompleted', {
+          quiz_type: 'dental_consultation',
+          concern: answers.concern || '',
+          timeline: answers.timeline || '',
+          candidate_status: answers.notCandidate || ''
+        });
+      }
+      
       // Show success to user regardless (they don't need to know about backend issues)
       setIsSubmitted(true);
       

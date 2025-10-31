@@ -35,6 +35,14 @@ export default function Home() {
   };
 
   const goToQuiz = () => {
+    // Track navigation clicks
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('trackCustom', 'NavigationClick', {
+        button_text: 'Start Quiz',
+        source_page: 'home',
+        destination: 'quiz'
+      });
+    }
     navigate(createPageUrl('Quiz'));
   };
 
@@ -65,10 +73,24 @@ export default function Home() {
                 className="text-gray-600 hover:text-blue-600 transition-colors">
                 FAQ
               </button>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <Phone className="w-4 h-4" />
-                <span>(772) 465-2825</span>
-              </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Phone className="w-4 h-4" />
+              <a 
+                href="tel:+17724652825" 
+                className="hover:text-blue-600 transition-colors"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.fbq) {
+                    window.fbq('track', 'Contact', {
+                      content_name: 'Phone Call Click',
+                      content_category: 'Contact',
+                      method: 'phone'
+                    });
+                  }
+                }}
+              >
+                (772) 465-2825
+              </a>
+            </div>
             </div>
 
             {/* Mobile Navigation */}
@@ -108,10 +130,24 @@ export default function Home() {
                   className="block w-full text-left text-gray-600 hover:text-blue-600 transition-colors py-2">
                   FAQ
                 </button>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 py-2">
-                  <Phone className="w-4 h-4" />
-                  <span>(772) 465-2825</span>
-                </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-600 py-2">
+                <Phone className="w-4 h-4" />
+                <a 
+                  href="tel:+17724652825" 
+                  className="hover:text-blue-600 transition-colors"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.fbq) {
+                      window.fbq('track', 'Contact', {
+                        content_name: 'Phone Call Click - Mobile',
+                        content_category: 'Contact',
+                        method: 'phone'
+                      });
+                    }
+                  }}
+                >
+                  (772) 465-2825
+                </a>
+              </div>
               </div>
             </div>
           )}

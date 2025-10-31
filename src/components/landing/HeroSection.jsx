@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
@@ -14,9 +14,83 @@ import {
 
 export default function HeroSection() {
   const navigate = useNavigate();
+  
   const goToQuiz = () => {
+    // Track CTA button click
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: 'Quiz CTA Click',
+        content_category: 'CTA',
+        value: 495,
+        currency: 'USD'
+      });
+    }
     navigate(createPageUrl('Quiz'));
   };
+
+  // Set up Wistia video tracking
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.Wistia) {
+      window.Wistia.api("bj6epe6th1", function(video) {
+        // Track video play
+        video.bind("play", function() {
+          if (window.fbq) {
+            window.fbq('trackCustom', 'VideoPlay', {
+              video_title: 'The Procedure That Changed His Life',
+              video_type: 'VSL',
+              video_id: 'bj6epe6th1'
+            });
+          }
+        });
+
+        // Track 25% watched
+        video.bind("secondchange", function(s) {
+          const percent = Math.round((s / video.duration()) * 100);
+          if (percent === 25 && !video._tracked25) {
+            video._tracked25 = true;
+            if (window.fbq) {
+              window.fbq('trackCustom', 'VideoProgress', {
+                video_title: 'The Procedure That Changed His Life',
+                progress: '25%',
+                video_id: 'bj6epe6th1'
+              });
+            }
+          }
+          if (percent === 50 && !video._tracked50) {
+            video._tracked50 = true;
+            if (window.fbq) {
+              window.fbq('trackCustom', 'VideoProgress', {
+                video_title: 'The Procedure That Changed His Life',
+                progress: '50%',
+                video_id: 'bj6epe6th1'
+              });
+            }
+          }
+          if (percent === 75 && !video._tracked75) {
+            video._tracked75 = true;
+            if (window.fbq) {
+              window.fbq('trackCustom', 'VideoProgress', {
+                video_title: 'The Procedure That Changed His Life',
+                progress: '75%',
+                video_id: 'bj6epe6th1'
+              });
+            }
+          }
+        });
+
+        // Track video completion
+        video.bind("end", function() {
+          if (window.fbq) {
+            window.fbq('trackCustom', 'VideoComplete', {
+              video_title: 'The Procedure That Changed His Life',
+              video_type: 'VSL',
+              video_id: 'bj6epe6th1'
+            });
+          }
+        });
+      });
+    }
+  }, []);
 
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 overflow-hidden">
