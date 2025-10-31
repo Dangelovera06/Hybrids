@@ -66,22 +66,51 @@ export default function QuizPage() {
     formData.append('notCandidate', answers.notCandidate || '');
     formData.append('timeline', answers.timeline || '');
     
+    // Prepare data for Google Sheets
+    const googleSheetsData = {
+      name: userInfo.name,
+      email: userInfo.email,
+      phone: userInfo.phone,
+      concern: answers.concern || '',
+      notCandidate: answers.notCandidate || '',
+      timeline: answers.timeline || ''
+    };
+    
     try {
-      // Submit to Netlify Forms
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
-      });
+      // Submit to both Netlify Forms and Google Sheets simultaneously
+      const [netlifyResponse, googleSheetsResponse] = await Promise.allSettled([
+        // Netlify Forms submission
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        }),
+        
+        // Google Sheets submission
+        fetch('https://script.google.com/macros/s/AKfycbw6FtB_AxTlQ0ILB7e4EPfXa9VZvTkbsGEQTqStSpqvsYv9qHX5jL8AOgu4VYKZQAg5uw/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(googleSheetsData)
+        })
+      ]);
       
-      if (response.ok) {
-        console.log('Form submitted successfully to Netlify');
-        setIsSubmitted(true);
+      // Log results
+      if (netlifyResponse.status === 'fulfilled' && netlifyResponse.value.ok) {
+        console.log('✅ Form submitted successfully to Netlify');
       } else {
-        console.error('Form submission failed');
-        // Still show success to user, but log error
-        setIsSubmitted(true);
+        console.error('❌ Netlify submission failed:', netlifyResponse.reason);
       }
+      
+      if (googleSheetsResponse.status === 'fulfilled' && googleSheetsResponse.value.ok) {
+        const result = await googleSheetsResponse.value.json();
+        console.log('✅ Form submitted successfully to Google Sheets:', result);
+      } else {
+        console.error('❌ Google Sheets submission failed:', googleSheetsResponse.reason);
+      }
+      
+      // Show success to user regardless (they don't need to know about backend issues)
+      setIsSubmitted(true);
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       // Still show success to user, but log error
