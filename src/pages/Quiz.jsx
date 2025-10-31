@@ -66,46 +66,18 @@ export default function QuizPage() {
     formData.append('notCandidate', answers.notCandidate || '');
     formData.append('timeline', answers.timeline || '');
     
-    // Prepare data for Google Sheets
-    const googleSheetsData = {
-      name: userInfo.name,
-      email: userInfo.email,
-      phone: userInfo.phone,
-      concern: answers.concern || '',
-      notCandidate: answers.notCandidate || '',
-      timeline: answers.timeline || ''
-    };
-    
     try {
-      // Submit to both Netlify Forms and Google Sheets simultaneously
-      const [netlifyResponse, googleSheetsResponse] = await Promise.allSettled([
-        // Netlify Forms submission
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        }),
-        
-        // Google Sheets submission
-        fetch('https://script.google.com/macros/s/AKfycbw6FtB_AxTlQ0ILB7e4EPfXa9VZvTkbsGEQTqStSpqvsYv9qHX5jL8AOgu4VYKZQAg5uw/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(googleSheetsData)
-        })
-      ]);
+      // Submit to Netlify Forms (Zapier will catch this)
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
       
-      // Log results
-      if (netlifyResponse.status === 'fulfilled' && netlifyResponse.value.ok) {
-        console.log('✅ Form submitted successfully to Netlify');
+      if (response.ok) {
+        console.log('✅ Form submitted successfully to Netlify (Zapier will process)');
       } else {
-        console.error('❌ Netlify submission failed:', netlifyResponse.reason);
-      }
-      
-      if (googleSheetsResponse.status === 'fulfilled' && googleSheetsResponse.value.ok) {
-        const result = await googleSheetsResponse.value.json();
-        console.log('✅ Form submitted successfully to Google Sheets:', result);
-      } else {
-        console.error('❌ Google Sheets submission failed:', googleSheetsResponse.reason);
+        console.error('❌ Netlify submission failed');
       }
       
       // Track successful quiz submission with Meta Pixel
