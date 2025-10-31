@@ -117,6 +117,7 @@ export default function QuizPage() {
           currency: 'USD',
           lead_type: 'quiz_completion'
         });
+        console.log('🎯 Lead event fired for quiz submission');
         
         // Also track as a custom event
         window.fbq('trackCustom', 'QuizCompleted', {
@@ -125,6 +126,9 @@ export default function QuizPage() {
           timeline: answers.timeline || '',
           candidate_status: answers.notCandidate || ''
         });
+        console.log('📋 QuizCompleted custom event fired');
+      } else {
+        console.log('❌ fbq not available for quiz tracking');
       }
       
       // Show success to user regardless (they don't need to know about backend issues)

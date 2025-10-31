@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Pixel Test</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '645395303334948');
+      fbq('track', 'PageView');
+      
+      // Log to console for debugging
+      console.log('Meta Pixel initialized');
+      console.log('fbq function available:', typeof window.fbq);
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #1877f2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #166fe5;
+        }
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <!-- Meta Pixel Noscript -->
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=645395303334948&ev=PageView&noscript=1"
+    /></noscript>
+
+    <h1>🎯 Meta Pixel Test Page</h1>
+    <p><strong>Pixel ID:</strong> 645395303334948</p>
+    
+    <div class="test-section">
+        <h2>📊 Pixel Status</h2>
+        <div id="pixelStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🧪 Test Events</h2>
+        <button onclick="testLead()">Test Lead Event</button>
+        <button onclick="testInitiateCheckout()">Test InitiateCheckout</button>
+        <button onclick="testContact()">Test Contact Event</button>
+        <button onclick="testCustomEvent()">Test Custom Event</button>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 Event Log</h2>
+        <div id="eventLog" class="log"></div>
+    </div>
+
+    <script>
+        // Check pixel status
+        function checkPixelStatus() {
+            const status = document.getElementById('pixelStatus');
+            
+            if (typeof window.fbq === 'function') {
+                status.innerHTML = '<span class="success">✅ Meta Pixel is loaded and ready</span>';
+                log('✅ Meta Pixel initialized successfully');
+            } else {
+                status.innerHTML = '<span class="error">❌ Meta Pixel not detected</span>';
+                log('❌ Meta Pixel failed to load');
+            }
+        }
+
+        // Logging function
+        function log(message) {
+            const logDiv = document.getElementById('eventLog');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        // Test functions
+        function testLead() {
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Lead', {
+                    content_name: 'Test Lead Event',
+                    content_category: 'Test',
+                    value: 495,
+                    currency: 'USD'
+                });
+                log('🎯 Lead event fired');
+            } else {
+                log('❌ Cannot fire Lead event - fbq not available');
+            }
+        }
+
+        function testInitiateCheckout() {
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'InitiateCheckout', {
+                    content_name: 'Test CTA Click',
+                    content_category: 'Test',
+                    value: 495,
+                    currency: 'USD'
+                });
+                log('🛒 InitiateCheckout event fired');
+            } else {
+                log('❌ Cannot fire InitiateCheckout event - fbq not available');
+            }
+        }
+
+        function testContact() {
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Contact', {
+                    content_name: 'Test Contact',
+                    content_category: 'Test',
+                    method: 'phone'
+                });
+                log('📞 Contact event fired');
+            } else {
+                log('❌ Cannot fire Contact event - fbq not available');
+            }
+        }
+
+        function testCustomEvent() {
+            if (typeof window.fbq === 'function') {
+                window.fbq('trackCustom', 'TestEvent', {
+                    test_parameter: 'test_value',
+                    timestamp: new Date().toISOString()
+                });
+                log('🎨 Custom event fired');
+            } else {
+                log('❌ Cannot fire Custom event - fbq not available');
+            }
+        }
+
+        function clearLog() {
+            document.getElementById('eventLog').innerHTML = '';
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', function() {
+            setTimeout(checkPixelStatus, 1000); // Wait a bit for pixel to load
+            log('🚀 Test page loaded');
+        });
+    </script>
+</body>
+</html>

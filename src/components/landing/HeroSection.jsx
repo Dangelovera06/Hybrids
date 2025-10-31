@@ -24,14 +24,18 @@ export default function HeroSection() {
         value: 495,
         currency: 'USD'
       });
+      console.log('🛒 InitiateCheckout event fired from Hero CTA');
+    } else {
+      console.log('❌ fbq not available for Hero CTA tracking');
     }
     navigate(createPageUrl('Quiz'));
   };
 
   // Set up Wistia video tracking
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.Wistia) {
-      window.Wistia.api("bj6epe6th1", function(video) {
+    const setupWistiaTracking = () => {
+      if (typeof window !== 'undefined' && window.Wistia) {
+        window.Wistia.api("bj6epe6th1", function(video) {
         // Track video play
         video.bind("play", function() {
           if (window.fbq) {
@@ -88,6 +92,35 @@ export default function HeroSection() {
             });
           }
         });
+      });
+      } else {
+        // Wait for Wistia to load
+        setTimeout(setupWistiaTracking, 1000);
+      }
+    };
+
+    // Initial setup
+    setupWistiaTracking();
+    
+    // Also listen for Wistia ready event
+    if (typeof window !== 'undefined') {
+      window._wq = window._wq || [];
+      window._wq.push({
+        id: "bj6epe6th1",
+        onReady: function(video) {
+          console.log('Wistia video ready for tracking');
+          // Set up tracking when video is ready
+          if (window.fbq) {
+            video.bind("play", function() {
+              window.fbq('trackCustom', 'VideoPlay', {
+                video_title: 'The Procedure That Changed His Life',
+                video_type: 'VSL',
+                video_id: 'bj6epe6th1'
+              });
+              console.log('Video play event tracked');
+            });
+          }
+        }
       });
     }
   }, []);
