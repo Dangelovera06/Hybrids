@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { ArrowLeft, CheckCircle, Smile, Sparkles } from 'lucide-react';
 import ProgressBar from '../components/quiz/ProgressBar';
 import QuizStep from '../components/quiz/QuizStep';
+import { submitLeadToGHL, trackGHLEvent } from '@/utils/ghl';
 
 const quizQuestions = [
 {
@@ -56,29 +57,22 @@ export default function QuizPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Prepare form data for Netlify
-    const formData = new FormData();
-    formData.append('form-name', 'dental-quiz');
-    formData.append('name', userInfo.name);
-    formData.append('email', userInfo.email);
-    formData.append('phone', userInfo.phone);
-    formData.append('concern', answers.concern || '');
-    formData.append('notCandidate', answers.notCandidate || '');
-    formData.append('timeline', answers.timeline || '');
-    
     try {
-      // Submit to Netlify Forms (Zapier will catch this)
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+      // Submit directly to GoHighLevel (UNLIMITED submissions!)
+      await submitLeadToGHL({
+        name: userInfo.name,
+        email: userInfo.email,
+        phone: userInfo.phone,
+        source: 'Dental Quiz',
+        leadSource: 'Website Quiz',
+        tags: ['quiz-lead', 'dental-implants', 'free-consultation'],
+        customFields: {
+          concern: answers.concern || '',
+          notCandidate: answers.notCandidate || '',
+          timeline: answers.timeline || '',
+          quizCompletedAt: new Date().toISOString()
+        }
       });
-      
-      if (response.ok) {
-        console.log('✅ Form submitted successfully to Netlify (Zapier will process)');
-      } else {
-        console.error('❌ Netlify submission failed');
-      }
       
       // Track successful quiz submission with Meta Pixel
       if (typeof window !== 'undefined' && window.fbq) {
@@ -102,6 +96,18 @@ export default function QuizPage() {
       } else {
         console.log('❌ fbq not available for quiz tracking');
       }
+
+      // Track with GHL External Tracking (for analytics)
+      trackGHLEvent('Lead', {
+        name: userInfo.name,
+        email: userInfo.email,
+        phone: userInfo.phone,
+        concern: answers.concern || '',
+        notCandidate: answers.notCandidate || '',
+        timeline: answers.timeline || '',
+        source: 'dental_quiz',
+        value: 495
+      });
       
       // Show success to user regardless (they don't need to know about backend issues)
       setIsSubmitted(true);
@@ -147,13 +153,7 @@ export default function QuizPage() {
                     <p className="text-center text-gray-600">Enter your details to see your results and claim your Free Consultation.</p>
                   </CardHeader>
                   <CardContent>
-                    <form name="dental-quiz" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-4">
-                      <input type="hidden" name="form-name" value="dental-quiz" />
-                      
-                      {/* Hidden fields for quiz answers */}
-                      <input type="hidden" name="concern" value={answers.concern || ''} />
-                      <input type="hidden" name="notCandidate" value={answers.notCandidate || ''} />
-                      <input type="hidden" name="timeline" value={answers.timeline || ''} />
+                    <form onSubmit={handleSubmit} className="space-y-4">
                       
                       <div>
                         <Label htmlFor="name">Full Name *</Label>

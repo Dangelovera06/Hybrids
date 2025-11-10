@@ -67,6 +67,12 @@
       fbq('track', 'PageView');
     </script>
 
+    <!-- Go High Level External Tracking -->
+    <script 
+      src="https://link.msgsndr.com/js/external-tracking.js"
+      data-tracking-id="tk_410a83de53874bb5856b53ade6fbef9c">
+    </script>
+
     <!-- Wistia Video Player Scripts -->
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/bj6epe6th1.js" async type="module"></script>
@@ -109,23 +115,7 @@
       src="https://www.facebook.com/tr?id=645395303334948&ev=PageView&noscript=1"
     /></noscript>
     
-    <!-- Hidden form for Netlify to detect during build -->
-    <form name="dental-quiz" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <input type="text" name="concern" />
-      <input type="text" name="notCandidate" />
-      <input type="text" name="timeline" />
-      <input type="text" name="bot-field" />
-    </form>
-    
-    <form name="consultation-form" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="fullName" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <input type="text" name="bot-field" />
-    </form>
+    <!-- Forms now submit directly to GoHighLevel (unlimited submissions) -->
     
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
