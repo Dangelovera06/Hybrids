@@ -149,7 +149,7 @@ export default function HeroSection() {
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
             <span className="underline">Trusted by 1,000+ patients.</span> Our FREE Full-Arch Smile Preview includes a{" "}
-            <strong className="text-gray-900">3D CT Scan, Smile Simulation, and Expert Evaluation</strong>{" "}
+            <strong className="text-gray-900">3D CT Scan ($395 value), Smile Simulation, and Expert Evaluation</strong>{" "}
             — normally <span className="underline decoration-blue-800 font-semibold text-gray-800">$495</span>, yours <span className="underline decoration-blue-800 font-semibold text-gray-800">FREE</span> this month only.
           </p>
 

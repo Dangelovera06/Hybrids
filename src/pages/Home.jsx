@@ -76,7 +76,7 @@ export default function Home() {
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone className="w-4 h-4" />
               <a 
-                href="tel:+17724652825" 
+                href="tel:+17722665844" 
                 className="hover:text-blue-600 transition-colors"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.fbq) {
@@ -88,7 +88,7 @@ export default function Home() {
                   }
                 }}
               >
-                (772) 465-2825
+                (772) 266-5844
               </a>
             </div>
             </div>
@@ -133,7 +133,7 @@ export default function Home() {
               <div className="flex items-center space-x-2 text-sm text-gray-600 py-2">
                 <Phone className="w-4 h-4" />
                 <a 
-                  href="tel:+17724652825" 
+                  href="tel:+17722665844" 
                   className="hover:text-blue-600 transition-colors"
                   onClick={() => {
                     if (typeof window !== 'undefined' && window.fbq) {
@@ -145,7 +145,7 @@ export default function Home() {
                     }
                   }}
                 >
-                  (772) 465-2825
+                  (772) 266-5844
                 </a>
               </div>
               </div>
@@ -185,7 +185,7 @@ export default function Home() {
               <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>(772) 465-2825</span>
+                  <span>(772) 266-5844</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />

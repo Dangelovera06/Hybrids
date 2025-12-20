@@ -203,7 +203,7 @@ export default function QuizPage() {
           <CardContent className="p-8 text-center">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-2">Thank You!</h2>
-              <p className="text-gray-600 mb-6">Your results are being prepared. Our team will contact you shortly to schedule your FREE consultation and 3D scan.</p>
+              <p className="text-gray-600 mb-6">Our team will contact you shortly to schedule your FREE consultation and 3D scan ($395 value).</p>
               <Button onClick={() => navigate('/')}>Return to Homepage</Button>
             </CardContent>
           }

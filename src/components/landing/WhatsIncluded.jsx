@@ -19,7 +19,7 @@ export default function WhatsIncluded() {
   const includedItems = [
     {
       icon: Scan,
-      title: "3D CT Scan",
+      title: "3D CT Scan ($395 value)",
       value: "$250",
       description: "Advanced imaging to see every detail of your jaw structure and plan the perfect solution."
     },
