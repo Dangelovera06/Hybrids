@@ -1,8 +1,5 @@
 
 import React, { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Star,
@@ -13,23 +10,15 @@ import {
 } from "lucide-react";
 
 export default function HeroSection() {
-  const navigate = useNavigate();
-  
-  const goToQuiz = () => {
-    // Track CTA button click
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: 'Quiz CTA Click',
-        content_category: 'CTA',
-        value: 495,
-        currency: 'USD'
-      });
-      console.log('🛒 InitiateCheckout event fired from Hero CTA');
-    } else {
-      console.log('❌ fbq not available for Hero CTA tracking');
-    }
-    navigate(createPageUrl('Quiz'));
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   // Set up Wistia video tracking
   useEffect(() => {
@@ -182,20 +171,15 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="space-y-4 sm:space-y-5">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-lg sm:text-xl lg:text-2xl px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 shadow-blue-500/25 hover:shadow-blue-500/40 ring-2 ring-blue-500/20 hover:ring-blue-500/30 font-semibold"
-                onClick={goToQuiz}
-              >
-                <Sparkles className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 mr-3" />
-                Get My Free Smile Consultation
-                <ArrowRight className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 ml-3" />
-              </Button>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-500">
-                ⏰ Take our 60-second quiz to qualify
-              </p>
+            {/* CTA Quiz Embed */}
+            <div className="mt-6">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/quiz/m8tFoM9mzFshqWkDMo8Q"
+                style={{ border: 'none', width: '100%', minHeight: '500px' }}
+                scrolling="no"
+                id="m8tFoM9mzFshqWkDMo8Q"
+                title="quiz"
+              />
             </div>
           </div>
         </div>
